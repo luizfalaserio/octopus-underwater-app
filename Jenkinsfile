@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                        docker.withRegistry('<Your AWS ECR URL>', 'ecr:<Your ECR Zone>:<Your Jenkins Credentials>') {
+                        docker.withRegistry('https://604790146725.dkr.ecr.sa-east-1.amazonaws.com/octopus-underwater-app', 'ecr:sa-east-1:jenkins-aws') {
                     app.push("${env.BUILD_NUMBER}")
                     app.push("latest")
                     }
