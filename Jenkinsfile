@@ -37,8 +37,9 @@ pipeline {
     }
     post {
         success {
-            slackSend color: "good", message: "$JOB_NAME - $BUILD_DISPLAY_NAME Success after x ms
-            teste"
+            slackSend color: "good", message: """$JOB_NAME - $BUILD_DISPLAY_NAME Success after x ms
+            teste
+            """
         }
     }
 }
