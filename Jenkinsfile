@@ -36,8 +36,9 @@ pipeline {
         }
     }
     post {
-        always {
-            slackSend color: "good", message: "Message from Jenkins Pipeline"
+        success {
+            slackSend color: "good", message: "$JOB_NAME - $BUILD_DISPLAY_NAME Success after x ms
+            teste"
         }
     }
 }
